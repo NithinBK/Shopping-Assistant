@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PriceSpy — Smart Product Research India</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo" onclick="resetUI(); return false;">
+        <div class="logo-icon">⚡</div>
+        <span class="logo-text">Price<span>Spy</span></span>
+      </a>
+      <div class="header-search" id="headerSearch">
+        <div class="header-search-inner">
+          <input type="text" id="headerInput" placeholder="Search product..." />
+          <button onclick="runSearch(document.getElementById('headerInput').value)">Search →</button>
+        </div>
+      </div>
+      <span class="badge">SERPAPI POWERED</span>
+    </div>
+  </div>
+</header>
+
+<div id="hero">
+  <div class="container">
+    <div style="padding: 68px 0 56px; text-align: center;line-height: 40px;">
+      <div class="hero-eyebrow">Compare · Analyse · Decide</div>
+      <h1>Find the <span class="logo-text"><em>best price</em></span><br>before you buy.</h1>
+      <p>Compare Amazon.in & Flipkart prices, read what Reddit & YouTube say, and get pros & cons — all powered by real-time SerpAPI data.</p>
+      <div class="search-wrap" style="padding-top: 14px;">
+        <div class="search-bar">
+          <input type="text" id="heroInput" placeholder="Try 'boAt Rockerz 450' or 'Samsung 65 inch TV'..." />
+          <button class="search-btn" id="heroBtn" onclick="runSearch(document.getElementById('heroInput').value)">Search →</button>
+        </div>
+        <div class="search-examples">
+          <span class="example-tag" onclick="runSearch('boAt Airdopes 141')">boAt Airdopes 141</span>
+          <span class="example-tag" onclick="runSearch('iPhone 16 Pro')">iPhone 16 Pro</span>
+          <span class="example-tag" onclick="runSearch('Sony WH-1000XM5')">Sony WH-1000XM5</span>
+          <span class="example-tag" onclick="runSearch('Redmi Note 13 5G')">Redmi Note 13 5G</span>
+          <span class="example-tag" onclick="runSearch('Logitech MX Master 3')">Logitech MX Master 3</span>
+        </div>
+      </div>
+      <div class="platforms">
+        <div class="platform-pill"><div class="platform-dot" style="background:#ff9900"></div> Amazon.in</div>
+        <div class="platform-pill"><div class="platform-dot" style="background:#2874f0"></div> Flipkart</div>
+        <div class="platform-pill"><div class="platform-dot" style="background:#ff4500"></div> Reddit</div>
+        <div class="platform-pill"><div class="platform-dot" style="background:#ff0000"></div> YouTube</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="loading">
+  <div class="container">
+    <div class="loading-ring"></div>
+    <div class="loading-steps">
+      <div class="lstep" id="l1"><div class="lstep-dot"></div>Fetching Amazon.in prices...</div>
+      <div class="lstep" id="l2"><div class="lstep-dot"></div>Checking Flipkart listings...</div>
+      <div class="lstep" id="l3"><div class="lstep-dot"></div>Scanning Reddit discussions...</div>
+      <div class="lstep" id="l4"><div class="lstep-dot"></div>Finding YouTube reviews...</div>
+      <div class="lstep" id="l5"><div class="lstep-dot"></div>Extracting pros & cons...</div>
+      <div class="lstep" id="l6"><div class="lstep-dot"></div>Building your report...</div>
+    </div>
+  </div>
+</div>
+
+<div class="container"><div id="error-box"></div></div>
+
+<div id="results">
+  <div class="container">
+    <div class="results-bar">
+      <div>
+        <div class="results-label">Showing results for</div>
+        <div class="results-name" id="rName">—</div>
+      </div>
+      <button class="back-btn" onclick="resetUI()">← New Search</button>
+    </div>
+    <span class="sec-label">💰 Price Comparison</span>
+    <div class="price-row" id="priceRow"></div>
+    <div class="divider"></div>
+    <span class="sec-label">🎯 Smart Verdict</span>
+    <div class="verdict-banner fade-up" id="verdictBanner"></div>
+    <div class="divider"></div>
+    <span class="sec-label">⚖️ Pros & Cons — from customer reviews</span>
+    <div class="pc-grid" id="pcGrid"></div>
+    <div class="divider"></div>
+    <span class="sec-label">💬 Community Reviews</span>
+    <div class="reviews-grid" id="reviewsGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    PriceSpy ·
+    Prices are indicative. Always verify before purchase.
+  </div>
+</footer>
+<script src="../backend/script.js"></script>
+<script>
+
+</script>
+</body>
+</html>
